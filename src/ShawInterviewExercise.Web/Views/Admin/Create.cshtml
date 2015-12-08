@@ -1,0 +1,101 @@
+﻿@model ShawInterviewExercise.Web.Models.TblShow
+
+@{
+    ViewBag.Title = "Create New Show";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+}
+
+<script>
+
+    function readURL(input) {
+        var url = input.value;
+        var ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
+        if (input.files && input.files[0] && (ext == "gif" || ext == "png" || ext == "jpeg" || ext == "jpg")) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#showsImage').attr('src', e.target.result);
+                $('#showsImage').show();
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        } else {
+            $('#showsImage').hide();
+            $('#showsImage').attr('src', '/assets/no_preview.png');
+        }
+    }
+
+</script>
+@{
+    ViewBag.Title = "Create a new Show";
+}
+
+<h2>Create a new show</h2>
+
+@using (Html.BeginForm("Create", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Show</legend>
+        <table>
+            <tr>
+                <td  class="editor-label">@Html.LabelFor(model => model.Name)</td>
+                <td  class="editor-field">@Html.EditorFor(model => model.Name)</td>
+                <td  class="editor-field">@Html.ValidationMessageFor(model => model.Name)</td>
+            </tr>
+
+            <tr>
+                <td  class="editor-label">@Html.LabelFor(model => model.Title)</td>
+                <td  class="editor-field">@Html.EditorFor(model => model.Title)</td>
+                <td  class="editor-field">@Html.ValidationMessageFor(model => model.Title)</td>
+            </tr>
+ 
+           <tr>
+                <td  class="editor-label">@Html.LabelFor(model => model.VideoUrl)</td>
+                <td  class="editor-field">@Html.EditorFor(model => model.VideoUrl)</td>
+                <td  class="editor-field">@Html.ValidationMessageFor(model => model.VideoUrl)</td>
+           </tr>
+ 
+           <tr>
+                <td  class="editor-label">@Html.LabelFor(model => model.Enabled)</td>
+                <td  class="editor-field">@Html.EditorFor(model => model.Enabled)</td>
+                <td  class="editor-field">@Html.ValidationMessageFor(model => model.Enabled)</td>
+           </tr>
+ 
+           <tr>
+                <td  class="editor-label">@Html.LabelFor(model => model.ShowDate)</td>
+                <td  class="editor-field">@Html.EditorFor(model => model.ShowDate)</td>
+                <td  class="editor-field">@Html.ValidationMessageFor(model => model.ShowDate)</td>
+           </tr>
+            
+           <tr>
+                <td  class="editor-label">@Html.LabelFor(model => model.Memo)</td>
+                <td  class="editor-field">@Html.EditorFor(model => model.Memo)</td>                
+                <td  class="editor-field">@Html.ValidationMessageFor(model => model.Memo)</td>
+           </tr>
+
+           <tr>
+                <td  class="editor-label">Image File</td>
+                <td  class="editor-field"><input type="file" data-val="true" class="input-file" data-val-required="Image is required" id="FileLocation" name="FileLocation" onchange="readURL(this)"  /></td>
+                <td  class="editor-field"><span class="field-validation-valid" data-valmsg-for="FileLocation" data-valmsg-replace="true"></span></td>
+           </tr>
+        </table>    
+            
+        <div><img id="showsImage" src="#" alt=""  /></div>
+        
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,43 @@
+﻿/* for some blocks*/
+img.shows-list-images {
+    margin: auto;
+    width: 60%;
+    border:3px solid #73AD21;
+    padding: 10px;
+}
+
+.center-cont-show {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center
+}
+
+img.shows-list-image2 {
+    margin: auto;
+    width: 120px;
+    padding: 10px;
+}
+
+img.shows-list-image {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}	
+
+div.shows-list-image:hover {
+    border: 1px solid #777;
+}
+
+div.shows-list-image img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}

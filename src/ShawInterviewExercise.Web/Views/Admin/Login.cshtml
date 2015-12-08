@@ -1,0 +1,57 @@
+﻿@using ShawInterviewExercise.Web.Models;
+@model ShawInterviewExercise.Web.Models.AdminLogin
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_ShowLayout.cshtml";
+}
+
+
+<span class="center-cont-show" style="width:100%">
+    <span class="center-cont-show">  
+
+<section id="loginForm">
+<h2>Please log in.</h2>
+
+
+    @using (Html.BeginForm("Login","Admin",FormMethod.Post)) {
+    @Html.ValidationSummary(true)
+
+    <table>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.UserName)
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.UserName)
+            </td>
+            <td>
+                @Html.ValidationMessageFor(m => m.UserName)
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.Password)
+            </td>
+            <td>
+                @Html.PasswordFor(m => m.Password)
+            </td>
+            <td>
+                @Html.ValidationMessageFor(m => m.UserName)
+            </td
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Log in" /></td> 
+            <td></td>
+        </tr>
+        
+    </table>
+
+        
+}
+</section>
+
+     </span>
+</span

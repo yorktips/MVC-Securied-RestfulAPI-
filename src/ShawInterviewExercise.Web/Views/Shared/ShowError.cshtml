@@ -1,0 +1,21 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    Layout = "~/Views/Shared/_ShowLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Error</title>
+</head>
+<body>
+    <hgroup>
+        <h1>Error.</h1>
+        <h2>@Model.Exception.Message</h2>
+        <h2>ControllerName: @Model.ControllerName</h2>
+        <h2>ActionName: @Model.ActionName</h2>
+    </hgroup>
+</body>
+</html>

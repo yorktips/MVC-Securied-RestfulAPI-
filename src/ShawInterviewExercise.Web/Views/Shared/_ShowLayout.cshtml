@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js ie lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js ie lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js ie lt-ie9"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1" />
+    <meta name="location" content="Canada">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/ShowContent/css")
+    @Styles.Render("~/ShowDetailContent/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body class="pg-pages pg-landing_pages pg-all_shows" style="background-color: #;">
+    <div id="androidSmartBanner" class="hidden">
+        <span class="closeBanner">&times;</span>
+        <span class="appDescription">
+            <strong>Global Go</strong><br />
+            <i>Shaw Media</i><br />
+            Free
+        </span>
+        <a class="openApp" target="blank" href="#">View</a>
+    </div>
+
+<header class="siteHeader">
+    <div id="header-wrapper">
+        <div id="header-top-ad">
+   </div>
+  
+      <a class="globaltvLogo" title="GlobalTV" href="#">GlobalTV</a>
+
+        <nav role="navigation" class="navbar">
+            <div class="navbar-header">
+                <button data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <span class="navbar-brand">Menu</span>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <section class="search">
+                    <form action="" id="js-searchForm">
+                        <input class="navbar-searchField" id="js-searchField" name="q" type="search">
+                        <input class="navbar-searchBtn boxshadow" id="js-searchButton" value="" type="submit">
+                    </form>
+                </section>
+                <ul class="navigation navigation--primary">
+                            <li class="navigation-item"><a href="/shows" class="navigation-itemLink">Shows</a></li>
+                            <li class="navigation-item"><a href="#" class="navigation-itemLink">Full episodes</a></li>
+                            <li class="navigation-item"><a href="#" class="navigation-itemLink">Live TV</a></li>
+                            <li class="navigation-item"><a href="#" class="navigation-itemLink">Schedule</a></li>
+                </ul>
+                <div class="headerFeaturesBar">
+                    <ul class="headerFeatures">
+                            <li class="headerFeatures-item headerFeatures-title">FEATURED</li>
+                                <li class="headerFeatures-item"><a href="#" target="" class="headerFeatures-itemLink">Shades of Blue</a></li>
+                                <li class="headerFeatures-item"><a href="#" target="" class="headerFeatures-itemLink">Watch holiday movies</a></li>
+                                <li class="headerFeatures-item"><a href="#" target="" class="headerFeatures-itemLink">Supergirl recap: Tornado chasers</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+
+    @RenderBody()
+
+    <footer>
+            <div class="siteFooter js-catfish catfish--on" id="footer-wrapper">
+<div class="container-fluid center-cont">
+    <div class="fixed-column-left">
+        <a title="Global" id="global-logo-footer" href="#">Global</a>
+    </div>
+    <div class="links fluid-column-center">
+
+        <ul id="corporate-links">
+            <li>
+                <a id="Footer-Corporate-About" class="footer-link" href="#" title="About">About</a>
+            </li>
+            <li>
+                <a id="Footer-Corporate-Contact" class="footer-link" href="#" title="Contact">Contact</a>
+            </li>
+            <li>
+                <a id="Footer-Corporate-Privacy" class="footer-link" href="#" title="Privacy Policy">Privacy Policy</a>
+            </li>
+            <li>
+                <a id="Footer-Corporate-Terms" class="footer-link" href="#" title="Terms &amp; Conditions">Terms &amp; Conditions</a>
+            </li>
+            <li>
+                <a id="Footer-Corporate-Copyright" class="footer-link" href="#" title="Copyright">Copyright</a>
+            </li>
+            <li>
+                <a id="Footer-Corporate-Advertising" class="footer-link" href="#" title="Advertise">Advertise</a>
+            </li>
+            <li>
+                <a id="Footer-Corporate-Faq" class="footer-link" href="#" title="FAQ">FAQs</a>
+            </li>
+        </ul>
+    </div>
+    <div id="footer-shawLogo" class="fixed-column-right">
+        <a title="Shaw Media" class="footer-link footer-link--logoImage" href="#" id="shaw-corporate-logo"></a>
+        <p>
+            © <a href="show" class="footer-link footer-link--logoText" title="Shaw Media">Shaw Media Inc.,</a> 2015.<br>
+            All rights reserved.
+        </p>
+    </div>    
+</div>
+</div>
+</footer>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+
+
+
+</body>
+
+
+
+</html>

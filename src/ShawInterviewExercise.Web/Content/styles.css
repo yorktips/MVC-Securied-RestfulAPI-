@@ -1,0 +1,119 @@
+@charset "utf-8";
+body {
+	margin: 0px;
+	position: absolute;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 9px;
+}
+#standard {
+	border: 1px solid #204292;
+	height: 202px;
+	width: 194px;
+}
+#vertical {
+	border: 1px solid #204292;
+	height: 260px;
+	width: 140px;
+}
+#horizontal {
+	border: 1px solid #204292;
+	height: 54px;
+	width: 600px;
+}
+#logo {
+	padding: 10px;	
+}
+#copy {
+	padding-left: 10px;
+	padding-bottom: 10px;
+	padding-right: 10px;
+	color: #666;
+}
+#Hlogo {
+	padding-left: 10px;
+	padding-right: 14px;
+	padding-top: 14px;
+}
+#Hcopy {
+	padding-top: 4px;
+	color: #666;
+	width: 255px;
+	float:left;
+	line-height:9px;
+}
+#Vlogo {
+	padding-left: 8px;
+	padding-right: 14px;
+	padding-top: 10px;
+}
+#Vcopy {
+	padding-top: 10px;
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-bottom: 14px;
+	color: #666;
+	width: 120;
+	line-height:12px;
+	
+}
+#links {
+	background-color: #ebebeb;
+	color: #204292;
+	text-decoration: none;
+	font-style: normal;
+	font-variant: normal;
+}
+
+#linksTable {
+	border-top-style: none;
+}
+tr #cells {
+	border-top-width: 2px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: solid;
+	border-top-color: #FFF;
+}
+
+#close {
+	position: absolute;
+	height: 18px;
+	width: 18px;
+	z-index: 100;
+	left: 178px;
+	top: 2px;
+}
+#Hclose {
+	position: absolute;
+	height: 18px;
+	width: 18px;
+	z-index: 100;
+	left: 584px;
+	top: 2px;
+}
+#Vclose {
+	position: absolute;
+	height: 10px;
+	width: 18px;
+	z-index: 100;
+	left: 124px;
+	top: 2px;
+}
+.cellPad {
+	padding-left: 10px;
+}
+.HcellPad {
+	padding-left: 5px;
+}
+.VcellPad {
+	padding-left: 5px;
+}
+.links {
+	text-decoration: none;
+}
+
+a:link    {color:#204292;}
+a:visited {color:#204292;}
+a:hover   {color:#666;}
+a:active  {color:#204292;}

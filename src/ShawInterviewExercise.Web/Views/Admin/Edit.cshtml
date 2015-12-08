@@ -1,0 +1,142 @@
+﻿@model ShawInterviewExercise.Web.Models.Show
+
+@{
+    ViewBag.Title = "Edit Shows";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<script>
+
+    function readURL(input) {
+        var url = input.value;
+        var ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
+        if (input.files && input.files[0] && (ext == "gif" || ext == "png" || ext == "jpeg" || ext == "jpg")) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#showsImage').attr('src', e.target.result);
+                $('#showsImage').show();
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        } else {
+            $('#showsImage').hide();
+            $('#showsImage').attr('src', '/assets/no_preview.png');
+        }
+    }
+
+</script>
+
+@{
+    ViewBag.Title = "Edit Shows";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm("Edit","Admin",FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Show</legend>
+
+
+        @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model => model.ImageGuid) 
+        @Html.HiddenFor(model => model.Description) 
+        <table>
+            <tr>
+                <td  class="editor-label">@Html.LabelFor(model => model.Name)</td>
+                <td  class="editor-field">@Html.EditorFor(model => model.Name)</td>
+                <td  class="editor-field">@Html.ValidationMessageFor(model => model.Name)</td>
+            </tr>
+            <tr>
+                <td  class="editor-label">@Html.LabelFor(model => model.Title)</td>
+                <td  class="editor-field">@Html.EditorFor(model => model.Title)</td>
+                <td  class="editor-field">@Html.ValidationMessageFor(model => model.Title)</td>
+            </tr>
+
+            <tr>
+                <td  class="editor-label">@Html.LabelFor(model => model.Description)</td>
+                <td  class="editor-field">@Html.EditorFor(model => model.Description)</td>
+                <td  class="editor-field">@Html.ValidationMessageFor(model => model.Description)</td>
+            </tr>
+
+
+            <tr>
+                <td  class="editor-label">@Html.LabelFor(model => model.ImageGuid)</td>
+                <td  class="editor-field">@Html.DisplayFor(model => model.ImageGuid)</td>
+                <td  class="editor-field">@Html.ValidationMessageFor(model => model.ImageGuid)</td>
+            </tr>
+
+
+            <tr>
+                <td  class="editor-label">@Html.LabelFor(model => model.VideoUrl)</td>
+                <td  class="editor-field">@Html.EditorFor(model => model.VideoUrl)</td>
+                <td  class="editor-field">@Html.ValidationMessageFor(model => model.VideoUrl)</td>
+            </tr>
+            <tr>
+                <td  class="editor-label">@Html.LabelFor(model => model.Enabled)</td>
+                <td  class="editor-field">@Html.EditorFor(model => model.Enabled)</td>
+                <td  class="editor-field">@Html.ValidationMessageFor(model => model.Enabled)</td>
+            </tr>
+            <tr>
+                <td  class="editor-label">@Html.LabelFor(model => model.ShowDate)</td>
+                <td  class="editor-field">@Html.EditorFor(model => model.ShowDate)</td>
+                <td  class="editor-field">@Html.ValidationMessageFor(model => model.ShowDate)</td>
+            </tr>
+            <tr>
+                <td  class="editor-label">@Html.LabelFor(model => model.Memo)</td>
+                <td  class="editor-field">@Html.EditorFor(model => model.Memo)</td>
+                <td  class="editor-field">@Html.ValidationMessageFor(model => model.Memo)</td>
+            </tr>
+            <tr>
+                <td  class="editor-label">@Html.LabelFor(model => model.UpdatedAt)</td>
+                <td  class="editor-field">@Html.DisplayFor(model => model.UpdatedAt)</td>
+                <td  class="editor-field">@Html.ValidationMessageFor(model => model.UpdatedAt)</td>
+            </tr>
+            
+            <tr>
+                <td  class="editor-label">@Html.LabelFor(model => model.UpdatedBy)</td>
+                <td  class="editor-field">@Html.DisplayFor(model => model.UpdatedBy)</td>
+                <td  class="editor-field">@Html.ValidationMessageFor(model => model.UpdatedBy)</td>
+            </tr>
+
+        </table>
+
+        <br />
+
+        
+
+        <div class="editor-label"> @Html.LabelFor(model => model.ImageFile) </div>
+        <div>
+            @Html.DisplayFor(model => model.ImageFile)   
+            <input type="file"   value="@Html.DisplayFor(model => model.ImageFile)" id="FileLocation" name="FileLocation" onchange="readURL(this)"  />          
+            <span  ><span class="field-validation-valid" data-valmsg-for="FileLocation" data-valmsg-replace="true"></span></span>
+        </div>
+
+        <div class="editor-label">
+            <img id="showsImage" src="/Images/@Html.DisplayFor(model => model.ImageGuid)" alt=""  />
+        </div>
+
+        <div class="editor-field">
+            @Html.HiddenFor(model => model.Image)
+        </div>
+        <div class="editor-field">
+            @Html.HiddenFor(model => model.ImageFile)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

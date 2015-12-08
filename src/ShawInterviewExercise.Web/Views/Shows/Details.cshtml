@@ -1,0 +1,39 @@
+﻿@using ShawInterviewExercise.Web.Models;
+@model ShawInterviewExercise.Web.Models.Show
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_ShowLayout.cshtml";
+}
+
+@*//TODO: Lets create a nav that at minimum has home and video*@
+<h1>@Model.Name</h1>
+<span class="center-cont-show" style="width:100%">
+    <span class="center-cont-show">  
+        <h2>@Model.Title</h2>
+    </span>
+</span>
+<span class="center-cont-show" style="width:100%">
+    <span class="center-cont-show">  
+        <img src="/Images/@Model.ImageGuid" />
+    </span>
+</span>
+
+<span class="center-cont-show" style="width:100%">
+    <span class="center-cont-show">  
+        <h2>@Model.Description</h2>
+    </span>
+</span>
+
+<span class="center-cont-show" style="width:100%">
+    <span class="center-cont-show">  
+        <iframe width="560" height="315" src="@Model.VideoUrl" allowfullscreen ></iframe>
+     </span>
+</span>
+
+<span class="center-cont-show" style="width:100%">
+    <span class="center-cont-show">  
+    <p>@Model.Memo</p>
+     </span>
+</span>
+

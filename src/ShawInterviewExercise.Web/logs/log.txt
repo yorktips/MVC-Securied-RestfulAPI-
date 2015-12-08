@@ -1,0 +1,15 @@
+ERROR 2015-12-03 13:08:47,616  5301ms ShowsController        Index              - ShawInterviewExercise.API.Models.UnableConnectShowAPIException: Unable to connect to http://localhost:2052/
+   at ShawInterviewExercise.Web.Models.ShowsServices.CallGetApi[T](String webApiEntry, String urlGet) in d:\work\showtask\york_shaw_development_exercise_fs1-master\src\ShawInterviewExercise.Web\Models\ShowsServices.cs:line 32
+   at ShawInterviewExercise.Web.Controllers.ShowsController.Index() in d:\work\showtask\york_shaw_development_exercise_fs1-master\src\ShawInterviewExercise.Web\Controllers\ShowsController.cs:line 47
+ERROR 2015-12-03 13:26:10,991  5489ms ShowsController        Index              - ShawInterviewExercise.API.Models.UnableConnectShowAPIException: Unable to connect to http://localhost:2050/
+   at ShawInterviewExercise.Web.Models.ShowsServices.CallGetApi[T](String webApiEntry, String urlGet) in d:\work\showtask\york_shaw_development_exercise_fs1-master\src\ShawInterviewExercise.Web\Models\ShowsServices.cs:line 32
+   at ShawInterviewExercise.Web.Controllers.ShowsController.Index() in d:\work\showtask\york_shaw_development_exercise_fs1-master\src\ShawInterviewExercise.Web\Controllers\ShowsController.cs:line 47
+ERROR 2015-12-03 15:41:39,327 25987ms AdminController        Index              - ShawInterviewExercise.API.Models.UnableConnectShowAPIException: Unable to connect to http://localhost:2051/
+   at ShawInterviewExercise.Web.Models.ShowsServices.CallGetApi[T](String webApiEntry, String urlGet) in d:\work\showtask\york_shaw_development_exercise_fs1-master\src\ShawInterviewExercise.Web\Models\ShowsServices.cs:line 32
+   at ShawInterviewExercise.Web.Controllers.AdminController.Index() in d:\work\showtask\york_shaw_development_exercise_fs1-master\src\ShawInterviewExercise.Web\Controllers\AdminController.cs:line 39
+ERROR 2015-12-03 19:41:39,797 106302ms ShowsController        Index              - ShawInterviewExercise.API.Models.UnableConnectShowAPIException: Unable to connect to http://localhost:2051/
+   at ShawInterviewExercise.Web.Models.ShowsServices.CallGetApi[T](String webApiEntry, String urlGet) in d:\work\showtask\york_shaw_development_exercise_fs1-master\src\ShawInterviewExercise.Web\Models\ShowsServices.cs:line 33
+   at ShawInterviewExercise.Web.Controllers.ShowsController.Index() in d:\work\showtask\york_shaw_development_exercise_fs1-master\src\ShawInterviewExercise.Web\Controllers\ShowsController.cs:line 48
+ERROR 2015-12-03 19:41:45,246 111750ms ShowsController        Index              - ShawInterviewExercise.API.Models.UnableConnectShowAPIException: Unable to connect to http://localhost:2051/
+   at ShawInterviewExercise.Web.Models.ShowsServices.CallGetApi[T](String webApiEntry, String urlGet) in d:\work\showtask\york_shaw_development_exercise_fs1-master\src\ShawInterviewExercise.Web\Models\ShowsServices.cs:line 33
+   at ShawInterviewExercise.Web.Controllers.ShowsController.Index() in d:\work\showtask\york_shaw_development_exercise_fs1-master\src\ShawInterviewExercise.Web\Controllers\ShowsController.cs:line 48

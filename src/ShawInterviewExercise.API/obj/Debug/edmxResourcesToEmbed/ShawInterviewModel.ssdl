@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ShawInterviewModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ShawInterviewModelStoreContainer">
+    <EntitySet Name="Show" EntityType="ShawInterviewModel.Store.Show" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="User" EntityType="ShawInterviewModel.Store.User" store:Type="Tables" store:Schema="dbo" store:Name="User">
+      <DefiningQuery>SELECT 
+      [User].[Id] AS [Id], 
+      [User].[Account] AS [Account], 
+      [User].[UserGuid] AS [UserGuid], 
+      [User].[Name] AS [Name], 
+      [User].[Email] AS [Email], 
+      [User].[AccessToken] AS [AccessToken], 
+      [User].[Enabled] AS [Enabled], 
+      [User].[Memo] AS [Memo]
+      FROM [dbo].[User] AS [User]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+  <EntityType Name="Show">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="ImageGuid" Type="nvarchar" Nullable="false" MaxLength="40" />
+    <Property Name="Image" Type="image" />
+    <Property Name="ImageFile" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="VideoUrl" Type="nvarchar" MaxLength="255" />
+    <Property Name="Enabled" Type="bit" Nullable="false" />
+    <Property Name="ShowDate" Type="datetime" />
+    <Property Name="Memo" Type="text" />
+    <Property Name="UpdatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'D:\WORK\SHOWTASK\YORK_SHAW_DEVELOPMENT_EXERCISE_FS1-MASTER\SRC\SHAWINTERVIEWEXERCISE.API\APP_DATA\SHOWINTERVIEW.MDF.dbo.User' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Account" />
+      <PropertyRef Name="UserGuid" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Account" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="UserGuid" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="Email" Type="nvarchar" MaxLength="255" />
+    <Property Name="AccessToken" Type="nvarchar" MaxLength="255" />
+    <Property Name="Enabled" Type="bit" />
+    <Property Name="Memo" Type="text" />
+  </EntityType>
+</Schema>

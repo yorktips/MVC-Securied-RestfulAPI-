@@ -1,0 +1,112 @@
+﻿@using ShawInterviewExercise.Web.Models;
+@model IEnumerable<Show>
+
+@{
+    ShowsServices showSrv = new ShowsServices();
+    ViewBag.Title = "All Shows";
+    Layout = "~/Views/Shared/_ShowLayout.cshtml";
+}
+
+
+<script>
+
+    function DoFilter(input) {
+        /*
+        alert("show_" + input);
+        var myList = document.getElementsByTagName("article"); // get all article elements
+        
+        if ("all" == input.toLowerCase()) {
+            $(".allShows-show").show();
+            return false;
+        }
+        $(".allShows-show").hide();
+        $(".show_"+ input).show();
+        return false;
+        */
+    }
+
+</script>
+
+<div id="main" class="pageContent">
+<section id="highPriorityZone" class="zonePriority--high">
+    
+</section>
+
+<section id="mediumPriorityZone" class="zonePriority--medium">
+    <section class="allShows default--padding">
+    <div class="container-fluid center-cont">
+        <h1 class="heading--primary">Shows</h1>
+        <ul class="filter-alpha">
+            <li class="filter-all filter-mobile"><a class="filter-link all" href="/shows/Filter/all" data-type="clear-filters"  >All</a></li>
+            <li class="filter-mobile"><a class="filter-link num @ShowsServices.DoFilterLink(Model,"#")" href="/shows/Filter/aster" data-type="#">#</a></li>
+            <li><a class="filter-link @ShowsServices.DoFilterLink(Model,"a")"  data-type="a" href="/shows/Filter/A">A</a></li>
+            <li><a class="filter-link @ShowsServices.DoFilterLink(Model,"b")" data-type="b" href="/shows/Filter/B">B</a></li>
+            <li><a class="filter-link @ShowsServices.DoFilterLink(Model,"c")" data-type="c" href="/shows/Filter/C">C</a></li>
+            <li><a class="filter-link @ShowsServices.DoFilterLink(Model,"d")" data-type="d" href="/shows/Filter/D">D</a></li>
+            <li><a class="filter-link @ShowsServices.DoFilterLink(Model,"e")" data-type="e" href="/shows/Filter/E">E</a></li>
+            <li><a class="filter-link @ShowsServices.DoFilterLink(Model,"f")" data-type="f" href="/shows/Filter/F">F</a></li>
+            <li><a class="filter-link @ShowsServices.DoFilterLink(Model,"g")" data-type="g" href="/shows/Filter/G">G</a></li>
+            <li><a class="filter-link @ShowsServices.DoFilterLink(Model,"h")" data-type="h" href="/shows/Filter/H">H</a></li>
+            <li><a class="filter-link @ShowsServices.DoFilterLink(Model,"i")" data-type="i" href="/shows/Filter/I">I</a></li>
+            <li><a class="filter-link @ShowsServices.DoFilterLink(Model,"j")" data-type="j" href="/shows/Filter/J">J</a></li>
+            <li><a class="filter-link @ShowsServices.DoFilterLink(Model,"k")" data-type="k" href="/shows/Filter/K">K</a></li>
+            <li><a class="filter-link @ShowsServices.DoFilterLink(Model,"l")" data-type="l" href="/shows/Filter/L">L</a></li>
+            <li><a class="filter-link @ShowsServices.DoFilterLink(Model,"m")" data-type="m" href="/shows/Filter/M">M</a></li>
+            <li><a class="filter-link @ShowsServices.DoFilterLink(Model,"n")" data-type="n" href="/shows/Filter/N">N</a></li>
+            <li><a class="filter-link @ShowsServices.DoFilterLink(Model,"o")" data-type="o" href="/shows/Filter/O">O</a></li>
+            <li><a class="filter-link @ShowsServices.DoFilterLink(Model,"p")" data-type="p" href="/shows/Filter/P">P</a></li>
+            <li><a class="filter-link @ShowsServices.DoFilterLink(Model,"q")" data-type="q" href="/shows/Filter/Q">Q</a></li>
+            <li><a class="filter-link @ShowsServices.DoFilterLink(Model,"r")" data-type="r" href="/shows/Filter/R">R</a></li>
+            <li><a class="filter-link @ShowsServices.DoFilterLink(Model,"s")" data-type="s" href="/shows/Filter/S">S</a></li>
+            <li><a class="filter-link @ShowsServices.DoFilterLink(Model,"t")" data-type="t" href="/shows/Filter/T">T</a></li>
+            <li><a class="filter-link @ShowsServices.DoFilterLink(Model,"u")" data-type="u" href="/shows/Filter/U">U</a></li>
+            <li><a class="filter-link @ShowsServices.DoFilterLink(Model,"v")" data-type="v" href="/shows/Filter/V">V</a></li>
+            <li><a class="filter-link @ShowsServices.DoFilterLink(Model,"w")" data-type="w" href="/shows/Filter/W">W</a></li>
+            <li><a class="filter-link @ShowsServices.DoFilterLink(Model,"x")" data-type="x" href="/shows/Filter/X">X</a></li>
+            <li><a class="filter-link @ShowsServices.DoFilterLink(Model,"y")" data-type="y" href="/shows/Filter/Y">Y</a></li>
+            <li><a class="filter-link @ShowsServices.DoFilterLink(Model,"z")" data-type="z" href="/shows/Filter/Z">Z</a></li>
+            <li class="filter-mobile filter-range"><a class="filter-link" data-type="a b c d" href="#">A - D</a></li>
+            <li class="filter-mobile filter-range"><a class="filter-link" data-type="e f g h" href="#">E - H</a></li>
+            <li class="filter-mobile filter-range"><a class="filter-link" data-type="i j k l" href="#">I - L</a></li>
+            <li class="filter-mobile filter-range"><a class="filter-link" data-type="m n o p" href="#">M - P</a></li>
+            <li class="filter-mobile filter-range"><a class="filter-link" data-type="q r s t" href="#">Q - T</a></li>
+            <li class="filter-mobile filter-range"><a class="filter-link" data-type="v w" href="#">V - W</a></li>
+            <li class="filter-mobile filter-range"><a class="filter-link" data-type="x y z" href="#">X - Z</a></li>
+        </ul>
+
+
+
+            <div class="row">
+
+@{var idx=0;var wkname="";}
+@foreach (var show in Model)
+{
+    wkname = idx.ToString() + "_"+show.Name.Substring(0, 1);
+    wkname = show.Name.Substring(0, 1).ToLower();
+            <article id="show_@idx" class="allShows-show col-xs-6 col-sm-4 col-lg-3" >
+                <figure class="post-media">
+                     <a href="/shows/Details/@show.Id" target="_blank" class="link--hasImage">
+                          <img src="/Images/@show.ImageGuid" alt="@show.Title" title="@show.Title" class="post-mediaImg shows-list-imag" width="230" >
+                     </a>
+
+                     <div style="display: none;" class="overlay">
+                          <a title="@show.Title - Visit Showpage" href="/shows/Details/@show.Id" class="show-link siteLink standalone" target="_blank">Visit<br>showpage</a>
+                     </div>
+                </figure>
+
+                <h3 class="allShows-showTitle"><a title="@show.Title - Visit Showpage" href="/shows/Details/@show.Id" target="_blank" class="link--primary">@show.Title</a></h3>
+            </article>    
+    idx = idx + 1;
+
+}
+
+
+        </div>
+
+    </div>
+</section>
+</section>
+<section id="lowPriorityZone" class="zonePriority--low">
+    
+</section>
+</div>

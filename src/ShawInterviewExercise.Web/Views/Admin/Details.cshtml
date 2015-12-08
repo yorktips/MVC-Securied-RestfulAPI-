@@ -1,0 +1,64 @@
+﻿@using ShawInterviewExercise.Web.Models;
+@model Show
+
+@{
+    ViewBag.Title = "Show Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Show</legend>
+    <table>
+        <tr>
+            <td  class="display-label">@Html.DisplayNameFor(model => model.Name)</td>
+            <td  class="display-field">@Html.DisplayFor(model => model.Name)</td>
+        </tr>
+        <tr>
+            <td  class="display-label">@Html.DisplayNameFor(model => model.Title)</td>
+            <td  class="display-field">@Html.DisplayFor(model => model.Title)</td>
+        </tr>
+        <tr>
+            <td  class="display-label">@Html.DisplayNameFor(model => model.VideoUrl)</td>
+            <td  class="display-field">@Html.DisplayFor(model => model.VideoUrl)</td>
+        </tr>
+        <tr>
+            <td  class="display-label">@Html.DisplayNameFor(model => model.Enabled)</td>
+            <td  class="display-field">@Html.DisplayFor(model => model.Enabled)</td>
+        </tr>
+        <tr>
+            <td  class="display-label">@Html.DisplayNameFor(model => model.ShowDate)</td>
+            <td  class="display-field">@Html.DisplayFor(model => model.ShowDate)</td>
+        </tr>
+        <tr>
+            <td  class="display-label">@Html.DisplayNameFor(model => model.Memo)</td>
+            <td  class="display-field">@Html.DisplayFor(model => model.Memo)</td>
+        </tr>
+        <tr>
+            <td  class="display-label">@Html.DisplayNameFor(model => model.UpdatedAt)</td>
+            <td  class="display-field">@Html.DisplayFor(model => model.UpdatedAt)</td>
+        </tr>
+        <tr>
+            <td  class="display-label">@Html.DisplayNameFor(model => model.UpdatedBy)</td>
+            <td  class="display-field">@Html.DisplayFor(model => model.UpdatedBy)</td>
+        </tr>
+
+    </table>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ImageFile)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ImageFile)
+    </div>
+        <div>
+            <img id="showsImage" src="/Images/@Html.DisplayFor(model => model.ImageGuid)" alt=""  />
+        </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+

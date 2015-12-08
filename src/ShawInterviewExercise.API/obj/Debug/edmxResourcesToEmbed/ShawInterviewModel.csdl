@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ShawInterviewModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ShawInterviewEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Shows" EntityType="ShawInterviewModel.Show" />
+    <EntitySet Name="Users" EntityType="ShawInterviewModel.User" />
+  </EntityContainer>
+  <EntityType Name="Show">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="ImageGuid" Type="String" Nullable="false" MaxLength="40" Unicode="true" FixedLength="false" />
+    <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="ImageFile" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="VideoUrl" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Enabled" Type="Boolean" Nullable="false" />
+    <Property Name="ShowDate" Type="DateTime" Precision="3" />
+    <Property Name="Memo" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Account" />
+      <PropertyRef Name="UserGuid" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Account" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="UserGuid" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Name" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="AccessToken" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Enabled" Type="Boolean" />
+    <Property Name="Memo" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+  </EntityType>
+</Schema>
